@@ -1,0 +1,8 @@
+<h1> This is the specific band you wanted </h1>
+
+<% if flash[:success] %>
+  <%= flash[:success] %>
+<% end %>
+
+<br>
+<%= "band name: #{@band.name}" %>

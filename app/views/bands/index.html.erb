@@ -1,0 +1,21 @@
+<h1> Here are all your bands </h1>
+
+<% if flash[:success] %>
+  <%= flash[:success][0] %>
+<% end %>
+
+<% @bands.each do |band| %>
+  <ul>
+    <li><%= band.name %>
+
+      <form action="<%= band_url(band) %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        <input type="submit" value="Delete this band">
+      </form>
+
+    </li>
+
+  </ul>
+<% end %>

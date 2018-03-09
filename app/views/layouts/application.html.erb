@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W4D4</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <style>
+      body {background-color: darkgrey}
+    </style>
+  </head>
+
+  <body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg">
+    <h1> Spotify2 </h1>
+    <%= yield %>
+
+<% if logged_in? %>
+    <form action="<%= session_url %>" method="post">
+
+      <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+      <input type="hidden" name="_method" value="delete">
+
+      <input type="submit" value="logout">
+    </form>
+<% end %>
+
+  </body>
+</html>

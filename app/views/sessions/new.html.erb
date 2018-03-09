@@ -1,0 +1,22 @@
+<h1> Login! </h1>
+
+<form action="<%=session_url%>" method="post">
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label id="Email">Email</label>
+  <input id="Email" type="text" name="user[email]" value="">
+
+  <label id="password">Password</label>
+  <input id="password" type="password" name="user[password]" value="">
+
+<input type="submit" value="Login to your account">
+</form>
+
+
+
+
+<form action="<%= users_url %>" method="get">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="see all users">
+</form>
